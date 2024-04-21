@@ -8,14 +8,6 @@ from setuptools.command.build_py import build_py
 from subprocess import check_call
 import sys
 
-import notebook
-
-def enable_visual_interface():
-    notebook.nbextensions.install_nbextension_python(
-        "checklist.viewer", user=True, overwrite=True)
-    notebook.nbextensions.enable_nbextension_python(
-        "checklist.viewer")
-
 def enable_visual_interface_shell_cmd(direction):
     sys.path.append(direction)
     enable_visual_interface()
